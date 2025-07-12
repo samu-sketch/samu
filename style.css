@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.blur-bg {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  background: radial-gradient(circle, #00f2fe66, #4facfe00);
+  filter: blur(80px);
+  animation: move 15s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes move {
+  0% { transform: translate(-20%, -10%) rotate(0deg); }
+  100% { transform: translate(30%, 20%) rotate(360deg); }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+h1 .gradient {
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.type {
+  font-size: 1.4rem;
+  font-weight: 300;
+  height: 30px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  background-color: #00f2fe;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 20px #00f2fe80;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background: #4facfe;
+  color: white;
+  transform: scale(1.05);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #00f2fe70; }
+  70% { box-shadow: 0 0 0 20px #00f2fe00; }
+  100% { box-shadow: 0 0 0 0 #00f2fe00; }
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
